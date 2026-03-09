@@ -24,7 +24,8 @@ In the following, each table includes details about the fields of each entity:
 - *Multiplicity*: 1 means non repeatable. N means repeatable. Fields with type Array/List are non repeatable, but they can obviously contain several values.
 - *Mandatory*: M means Mandatory, R is reccomended, O optional. Reccomended fields are not mandatory.
 - *Vocabulary*: if the values of the fields must comply with a given vocabulary, this column contain the link to the vocabulary. In case of Array/List of strings, the values in the array/list must comply with the vocabulary.
--  
+
+You can find a more structured definition in json in the folder [schemas](schemas/).
 
 ## EOSC Resource
 
