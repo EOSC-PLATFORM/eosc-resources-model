@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:deployable-application",
+  "title": "Deployable Application",
+  "allOf": [
+    {"$ref": "urn:jsonschema:eosc:eosc-resource"},
+    {
+      "type": "object",
+      "properties": {
+        "acronym": {
+          "type": "string",
+          "description": "Acronym of the Application"
+        },
+        "tagline": {
+          "type": "string",
+          "description": "Short catch-phrase for marketing and advertising purposes. It will be usually displayed close to the Resource name and should refer to the main value or purpose of the Resource."
+        },
+        "logo": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link to the logo of the deployable application."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the Resource."
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of the latest update of the Resource."
+        },
+        "license": {"$ref": "urn:jsonschema:eosc:licensetype"},
+        "scientificDomains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scientificDomain": {
+                "type": "string",
+                "description": "nan"
+              },
+              "scientificSubdomain": {
+                "type": "string",
+                "description": "nan"
+              }
+            },
+            "required": [
+              "scientificDomain",
+              "scientificSubdomain"
+            ],
+            "additionalProperties": false
+          },
+          "$comment": "Recommended"
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Keywords associated to the Resource to simplify search by relevant keywords."
+        },
+        "creators": {
+          "type": "array",
+          "description": "The main individuals involved in producing the deployable software, in priority order",
+          "items": {"$ref": "urn:jsonschema:eosc:persontype"},
+          "minItems": 1
+        }
+      },
+      "required": [
+        "acronym",
+        "version",
+        "creators"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:adapter",
+  "title": "Adapter",
+  "allOf": [
+    {"$ref": "urn:jsonschema:eosc:eosc-resource"},
+    {
+      "type": "object",
+      "properties": {
+        "linkedResource": {
+          "type": "object",
+          "description": "EOSC Service or Guideline reference",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Type of resource linked"
+            },
+            "id": {
+              "type": "string",
+              "description": "Unique ID of the resource linked"
+            }
+          },
+          "required": [
+            "type",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "tagline": {
+          "type": "string",
+          "description": "Short (one-sentence) description"
+        },
+        "logo": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the logo of the adapter"
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri",
+          "description": "Documentation webpage (eg, read-the-docs page)"
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "description": "Code repository webpage (eg, Github repository)"
+        },
+        "package": {
+          "type": "string",
+          "format": "uri",
+          "description": "Software package releases webpage"
+        },
+        "programmingLanguage": {
+          "type": "string",
+          "description": "Programming language"
+        },
+        "license": {"$ref": "urn:jsonschema:eosc:licensetype"},
+        "version": {
+          "type": "string",
+          "description": "Software version"
+        },
+        "changeLog": {
+          "type": "string",
+          "description": "Changes in the latest version"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date",
+          "description": "Latest update date"
+        },
+        "notes": {
+          "type": "object",
+          "description": "Notes: for optional attributes.",
+          "properties": {
+            "sqa": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to the software quality scores/badges"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "creators": {
+          "type": "array",
+          "description": "The main persons involved in producing the adapter",
+          "items": {"$ref": "urn:jsonschema:eosc:persontype"},
+          "minItems": 1
+        }
+      },
+      "required": [
+        "linkedResource",
+        "documentation",
+        "repository",
+        "package",
+        "programmingLanguage",
+        "license",
+        "version",
+        "changeLog",
+        "lastUpdate",
+        "creators"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

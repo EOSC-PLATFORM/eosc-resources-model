@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:interoperabilityguideline",
+  "title": "InteroperabilityGuideline",
+  "allOf": [
+    {"$ref": "urn:jsonschema:eosc:eosc-resource"},
+    {
+      "type": "object",
+      "properties": {
+        "resourceTypesInfo": {
+          "type": "object",
+          "description": "Interoperability Guideline type.",
+          "properties": {
+            "resourceTypeGeneral": {
+              "type": "string",
+              "description": "Type of the resource. Default value, not editable: \"Guideline\""
+            },
+            "resourceType": {
+              "type": "string",
+              "description": "Specific type of the guideline."
+            }
+          },
+          "required": [
+            "resourceTypeGeneral",
+            "resourceType"
+          ],
+          "additionalProperties": false
+        },
+        "license": {"$ref": "urn:jsonschema:eosc:licensetype"},
+        "relatedStandards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "relatedStandardURI": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URI of the related standard."
+              },
+              "relatedStandardIdentifier": {
+                "type": "string",
+                "description": "The name of the related standard."
+              }
+            },
+            "required": [
+              "relatedStandardURI",
+              "relatedStandardIdentifier"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "creators": {
+          "type": "array",
+          "description": "The main persons involved in producing the interoperability guidelines",
+          "items": {"$ref": "urn:jsonschema:eosc:persontype"},
+          "minItems": 1
+        }
+      },
+      "required": [
+        "resourceTypesInfo",
+        "license",
+        "creators"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

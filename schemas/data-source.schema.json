@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:data-source",
+  "title": "Data Source",
+  "allOf": [
+    {"$ref": "urn:jsonschema:eosc:service"},
+    {
+      "type": "object",
+      "properties": {
+        "submissionPolicyUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "This policy provides a comprehensive framework for the contribution of research products. Criteria for submitting content to the repository as well as product preparation guidelines can be stated. Concepts for quality assurance may be provided.",
+          "$comment": "Recommended"
+        },
+        "preservationPolicyUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "This policy provides a comprehensive framework for the long-term preservation of the research products. Principles aims and responsibilities must be clarified. An important aspect is the description of preservation concepts to ensure the technical and conceptual utility of the content",
+          "$comment": "Recommended"
+        },
+        "versionControl": {
+          "type": "boolean",
+          "description": "If data versioning is supported: the data source explicitly allows the deposition of different versions of the same object"
+        },
+        "persistentIdentitySystems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "persistentIdentityProductType": {
+                "type": "string",
+                "description": "Specify the ProductType to which the persistent identifier is referring to."
+              },
+              "persistentIdentityProductTypeScheme": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "Specify the list of persistent identifier schemes used to refer to other research-related entities (e.g., authors, organizations, etc.)"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "persistentIdentityProductType",
+              "persistentIdentityProductTypeScheme"
+            ],
+            "additionalProperties": false
+          },
+          "$comment": "Recommended"
+        },
+        "dataSourceClassification": {
+          "type": "string",
+          "description": "The specific type of the data source based on the vocabulary defined for this property"
+        },
+        "researchProductTypes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "The types of OpenAIRE products managed by the data source, based on the vocabulary for this property",
+          "minItems": 1
+        },
+        "thematic": {
+          "type": "boolean",
+          "description": "Boolean value specifying if the data source is dedicated to a given discipline or is instead discipline agnostic"
+        },
+        "metadataLicense": {
+          "type": "object",
+          "description": "License of metadata about the data hosted by the source. It specifies under which license all metadata in the repository can be accessed, used, and repurposed.",
+          "properties": {
+            "licenseName": {
+              "type": "string",
+              "description": "Name of the license",
+              "$comment": "Recommended"
+            },
+            "licenseURL": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the license",
+              "$comment": "Recommended"
+            }
+          },
+          "required": [],
+          "additionalProperties": false,
+          "$comment": "Recommended"
+        }
+      },
+      "required": [
+        "dataSourceClassification",
+        "researchProductTypes",
+        "thematic"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

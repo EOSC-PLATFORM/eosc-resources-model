@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organization",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "A persistent identifier, a unique reference to the organisation"
+    },
+    "alternativePIDs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string",
+            "description": "PID value"
+          },
+          "pidSchema": {
+            "type": "string",
+            "description": "PID schema"
+          }
+        },
+        "required": ["pid"],
+        "additionalProperties": false
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the organisation"
+    },
+    "abbreviation": {
+      "type": "string",
+      "description": "Acronym or short name of the organisation"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Website of the organisation"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country of incorporation or Physical location of the organisation or its coordinating centre in the case of distributed, virtual, and mobile providers."
+    },
+    "legalEntity": {
+      "type": "boolean",
+      "description": "Yes if the organisation is a legal entity. False if it is not (e.g. a project consortium)"
+    },
+    "legalStatus": {
+      "type": "string",
+      "description": "Legal status of the Organisation. The legal status is usually noted in the registration act/statutes. For independent legal entities (1) - legal status of the Provider. For embedded organisations (2) - legal status of the hosting legal entity.",
+      "$comment": "Recommended"
+    },
+    "hostingLegalEntity": {
+      "type": "string",
+      "description": "Name of the organisation/institution legally hosting (housing) the provider/research infrastructure or its coordinating centre. A distinction is made between: (1) research infrastructures that are self-standing and have a defined and distinct legal entity, (2) research infrastructures that are embedded into another institution which is a legal entity (such as a university, a research organisation, etc.). If (1) - name of the research infrastructure, If (2) - name of the hosting organisation.",
+      "$comment": "Recommended"
+    },
+    "description": {
+      "type": "string",
+      "description": "A high-level description of the Organisation in fairly non-technical terms, with the vision, mission, objectives, background, experience."
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link to the logo/visual identity of the Organisation."
+    },
+    "multimedia": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "multimediaURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the multimedia resource."
+          },
+          "multimediaName": {
+            "type": "string",
+            "description": "Name of the multimedia resource."
+          }
+        },
+        "required": [
+          "multimediaURL",
+          "multimediaName"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "publicContact": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email",
+        "description": "Email to contact the organisation"
+      },
+      "minItems": 1
+    },
+    "nodePID": {
+      "type": "string",
+      "description": "Node the organisation is contributing to"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "abbreviation",
+    "website",
+    "country",
+    "legalEntity",
+    "description",
+    "logo",
+    "publicContact",
+    "nodePID"
+  ],
+  "$id": "urn:jsonschema:eosc:organization"
+}

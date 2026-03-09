@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:persontype",
+  "title": "PersonType",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "First Name of the person"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last Name of the person"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email of the person"
+    },
+    "pids": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pid": {
+            "type": "string",
+            "description": "pid"
+          },
+          "pidScheme": {
+            "type": "string",
+            "description": "PID scheme"
+          }
+        },
+        "required": [
+          "pid",
+          "pidScheme"
+        ]
+      },
+      "description": "persistent ids of the person"
+    },
+    "affiliations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "affiliationName": {
+            "type": "string",
+            "description": "Name of the organisation"
+          },
+          "affiliationIdentifiers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "PID of the organisation"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Type of the PID of the organisation"
+                }
+              },
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            "description": "Uniquely identifies the organizational affiliation of the person."
+          }
+        },
+        "required": ["affiliationName"]
+      },
+      "description": "The organizational or institutional affiliation of the person."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role of the person in the context of this entity",
+      "$comment": "Vocabulary: https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CREDIT.json"
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName",
+    "email"
+  ]
+}

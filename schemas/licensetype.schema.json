@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:licensetype",
+  "title": "LicenseType",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "licenseName": {
+      "type": "string",
+      "description": "Name of the license",
+      "$comment": "Vocabulary: https://spdx.org/licenses/ | Recommended"
+    },
+    "licenseURL": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the license",
+      "$comment": "Vocabulary: https://spdx.org/licenses/ | Recommended"
+    }
+  }
+}

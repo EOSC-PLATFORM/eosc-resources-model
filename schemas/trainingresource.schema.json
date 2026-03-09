@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:trainingresource",
+  "title": "TrainingResource",
+  "allOf": [
+    {"$ref": "urn:jsonschema:eosc:eosc-resource"},
+    {
+      "type": "object",
+      "properties": {
+        "eoscRelatedServices": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "PIDs of services related to this training resource",
+          "minItems": 1
+        },
+        "keywords": {
+          "type": "string",
+          "description": "The keyword(s) or tag(s) used to describe the resource."
+        },
+        "license": {"$ref": "urn:jsonschema:eosc:licensetype"},
+        "accessRights": {
+          "type": "string",
+          "description": "The access status of a resource (open, restricted, paid)."
+        },
+        "versionDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The date of the latest version of the training resource"
+        },
+        "targetGroups": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "The principal users(s) for which the learning resource was designed.",
+          "minItems": 1
+        },
+        "learningResourceTypes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "The predominant type or kind that characterizes the learning resource.",
+          "minItems": 1
+        },
+        "learningOutcomes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "The descriptions of what knowledge, skills or abilities students should acquire on completion of the resource.",
+          "minItems": 1
+        },
+        "expertiseLevel": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Target skill level in the topic being taught."
+          },
+          "minItems": 1
+        },
+        "contentResourceTypes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "The predominant content type of the learning resource (video, game, diagram, slides, etc.).",
+          "minItems": 1
+        },
+        "qualifications": {
+          "type": "string",
+          "description": "Identification of certification, accreditation or badge obtained with course or learning resource.",
+          "$comment": "Recommended"
+        },
+        "duration": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Approximate or typical time it takes to work with or through the learning resource for the typical intended target audience."
+          },
+          "minItems": 1
+        },
+        "languages": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "The language in which the resource was originally published or made available."
+        },
+        "scientificDomains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scientificDomain": {
+                "type": "string",
+                "description": "nan"
+              },
+              "scientificSubdomain": {
+                "type": "string",
+                "description": "nan"
+              }
+            },
+            "required": [
+              "scientificDomain",
+              "scientificSubdomain"
+            ],
+            "additionalProperties": false
+          },
+          "$comment": "Recommended"
+        },
+        "creators": {
+          "type": "array",
+          "description": "The main individuals involved in producing the training resource, in priority order",
+          "items": {"$ref": "urn:jsonschema:eosc:persontype"},
+          "minItems": 1
+        }
+      },
+      "required": [
+        "eoscRelatedServices",
+        "keywords",
+        "license",
+        "accessRights",
+        "versionDate",
+        "targetGroups",
+        "learningResourceTypes",
+        "learningOutcomes",
+        "expertiseLevel",
+        "contentResourceTypes",
+        "duration",
+        "creators"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}
