@@ -85,7 +85,6 @@
   },
   "required": [
     "firstName",
-    "lastName",
-    "email"
+    "lastName"
   ]
 }
