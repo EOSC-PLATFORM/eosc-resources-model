@@ -7,14 +7,14 @@ It ensures that every Node describes services, data sources, training materials,
 interoperability guidelines, deployable applications, and organisations 
 using a common, machine‑readable structure.
 
-Figure X gives an overview of the data model. Relationships among entities are 
+Figure 1 gives an overview of the data model. Relationships among entities are 
 semantically labelled. The label 'isA' denotes a hierarchical relationship ('super-class'). 
 For example: Datasource is a sub-class ('isA') of Service, Service is a sub-class ('isA') of Resource.
 Sub-classes inherit all the properties of their super-class.
 
 ![img/model-overview.png][model-overview]
 
-[model-overview]: img/model-overview.png "Overview of the EOSC profiles data model"
+[model-overview]: img/model-overview.png "Figure 1. Overview of the EOSC profiles data model"
 
 
 ## EOSC Resource
