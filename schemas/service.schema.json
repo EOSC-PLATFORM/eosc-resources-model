@@ -108,6 +108,26 @@
           "type": "string",
           "format": "uri",
           "description": "Webpage through which an order for the Service can be placed."
+        },
+        "relatedInteroperabilityGuidelines": {
+          "type": "array",
+          "description": "Optional. Interoperability Guidelines this service complies with.",
+          "items": {
+            "type": "object",
+            "required": [
+              "interoperabilityGuideline"
+            ],
+            "properties": {
+              "interoperabilityGuideline": {
+                "type": "string",
+                "description": "Mandatory. Identifier of the interoperability guideline."
+              },
+              "configurationInstance": {
+                "type": "object",
+                "description": "Optional. Configuration instance specifying how the service complies with or can be called according to the guideline template.",
+                "additionalProperties": true
+              }
+            }
         }
       },
       "required": [

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jsonschema:eosc:configuration-template",
+  "title": "ConfigurationTemplate",
+  "type": "object",
+  "required": [
+    "id",
+    "interoperabilityGuidelineId",
+    "name",
+    "nodePID",
+    "formModel"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Persistent identifier (PID) of the configuration template."
+    },
+    "interoperabilityGuidelineId": {
+      "type": "string",
+      "description": "Persistent identifier (PID) of the interoperability guideline."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the configuration template."
+    },
+    "nodePID": {
+      "type": "string",
+      "description": "Persistent identifier (PID) of the Node where the template was defined."
+    },
+    "formModel": {
+      "type": "array",
+      "description": "Map defining the structure of the configuration template (fields to be filled in by users).",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/formField"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "formField": {
+      "type": "object",
+      "description": "Definition of a single field in the configuration template form.",
+      "required": [
+        "fieldName",
+        "fieldType",
+        "mandatory",
+        "repeatable"
+      ],
+      "properties": {
+        "fieldName": {
+          "type": "string",
+          "description": "Name of the form field."
+        },
+        "fieldType": {
+          "type": "string",
+          "description": "Type of the form field (e.g. string, URL)."
+        },
+        "fieldDescription": {
+          "type": "string",
+          "description": "Description of the form field."
+        },
+        "mandatory": {
+          "type": "boolean",
+          "description": "Indicates whether the field is mandatory."
+        },
+        "repeatable": {
+          "type": "boolean",
+          "description": "Indicates whether the field can be repeated."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

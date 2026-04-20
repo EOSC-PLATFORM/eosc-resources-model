@@ -64,26 +64,29 @@ EOSC Resource is the super-class that defines properties shared among the differ
 A Service is an EOSC Resource. As such, it inherits all its fields.
 In addition, a Service has the following properties:
 
-| Field | Description | Type | Multiplicity | Mandatory | Vocabulary |
-|---|---|---|---|---|---|
-| serviceProviders | The name(s) (or abbreviation(s)) of Provider(s) that manage or deliver the Service in federated scenarios. | array of Strings | 1 | R |  |
-| webpage | Webpage with information about the Service usually hosted and maintained by the Provider. | URL | 1 | M |  |
-| logo | Link to the logo/visual identity of the Service. The logo will be visible at the Portal. If there is no specific logo for the Service the logo of the Provider may be used. | URL | 1 | R |  |
-| scientificDomains | The branch of science, scientific discipline that is related to the Service. | Object | 1 | R |   |
-| scientificDomains.scientificDomain |  | string  | 1 | M |  [SCIENTIFIC_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_DOMAIN.json) |
-| scientificDomains.scientificSubdomain |  | string  | 1 | M | [SCIENTIFIC_SUBDOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_SUBDOMAIN.json) |
-| categories |  | list of objects | 1 | R |  |
-| categories.category |  | string  | 1 | M | [CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATEGORY.json) |
-| categories.subcategory |  | string  | 1 | M | [SUBCATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUBCATEGORY.json) |
-| tags | free text Keywords associated to the Service to simplify search by relevant keywords. | array of string | 1 | R |  |
-| accessType | Type of access to the service (e.g. physical, virtual) | string  | 1 | R | [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json) |
-| jurisdiction | The property defines the jurisdiction of the users of the service, based on the vocabulary for this property | string  | 1 | M | [DS_JURISDICTION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_JURISDICTION.json) |
-| trl | The Technology Readiness Level of the Service | string Vocabulary TRL | 1 | M | [TRL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TRL.json)  |
-| termsOfUse | Webpage describing the rules, Service conditions and usage policy which one must agree to abide by in order to use the Service. | URL | 1 | O |  |
-| privacyPolicy | Link to the privacy policy applicable to the Service. | URL | 1 | O |  |
-| accessPolicy | Information about the access policies that apply. | URL | 1 | O |  |
-| orderType | Information on the order type: if the service is open access of if an order is required. | string | 1 | O | [ORDER_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ORDER_TYPE.json) |
-| order | Webpage through which an order for the Service can be placed. | URL | 1 | O |  |
+| Field                                                        | Description | Type | Multiplicity | Mandatory | Vocabulary                                                                                                                      |
+|--------------------------------------------------------------|---|---|---|---|---------------------------------------------------------------------------------------------------------------------------------|
+| serviceProviders                                             | The name(s) (or abbreviation(s)) of Provider(s) that manage or deliver the Service in federated scenarios. | array of Strings | 1 | R |                                                                                                                                 |
+| webpage                                                      | Webpage with information about the Service usually hosted and maintained by the Provider. | URL | 1 | M |                                                                                                                                 |
+| logo                                                         | Link to the logo/visual identity of the Service. The logo will be visible at the Portal. If there is no specific logo for the Service the logo of the Provider may be used. | URL | 1 | R |                                                                                                                                 |
+| scientificDomains                                            | The branch of science, scientific discipline that is related to the Service. | Object | 1 | R |                                                                                                                                 |
+| scientificDomains.scientificDomain                           |  | string  | 1 | M | [SCIENTIFIC_DOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_DOMAIN.json)     |
+| scientificDomains.scientificSubdomain                        |  | string  | 1 | M | [SCIENTIFIC_SUBDOMAIN](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SCIENTIFIC_SUBDOMAIN.json) |
+| categories                                                   |  | list of objects | 1 | R |                                                                                                                                 |
+| categories.category                                          |  | string  | 1 | M | [CATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CATEGORY.json)                       |
+| categories.subcategory                                       |  | string  | 1 | M | [SUBCATEGORY](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SUBCATEGORY.json)                 |
+| tags                                                         | free text Keywords associated to the Service to simplify search by relevant keywords. | array of string | 1 | R |                                                                                                                                 |
+| accessType                                                   | Type of access to the service (e.g. physical, virtual) | string  | 1 | R | [ACCESS_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ACCESS_TYPE.json)                 |
+| jurisdiction                                                 | The property defines the jurisdiction of the users of the service, based on the vocabulary for this property | string  | 1 | M | [DS_JURISDICTION](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/DS_JURISDICTION.json)         |
+| trl                                                          | The Technology Readiness Level of the Service | string Vocabulary TRL | 1 | M | [TRL](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/TRL.json)                                 |
+| termsOfUse                                                   | Webpage describing the rules, Service conditions and usage policy which one must agree to abide by in order to use the Service. | URL | 1 | O |                                                                                                                                 |
+| privacyPolicy                                                | Link to the privacy policy applicable to the Service. | URL | 1 | O |                                                                                                                                 |
+| accessPolicy                                                 | Information about the access policies that apply. | URL | 1 | O |                                                                                                                                 |
+| orderType                                                    | Information on the order type: if the service is open access of if an order is required. | string | 1 | O | [ORDER_TYPE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/ORDER_TYPE.json)                   |
+| order                                                        | Webpage through which an order for the Service can be placed. | URL | 1 | O |                                                                                                                                 |
+| relatedInteroperabilityGuidelines	                           | Interoperability Guidelines this service complies with |	Array of object |	1 |	O |                                                                                                                                 |
+| interoperabilityGuideline	 | identifier of the guideline |	string |	1 |	M | |
+| configurationInstance	     | if the guideline defines a configuration template, the service can provide a configuration instance to specify how it can be called. The structure of this field depends on the configuration template of the related guideline.	| object |	N	| O |                                                                                                                                 |
 
 ## Data Source
 
@@ -149,30 +152,31 @@ An InteroperabilityGuideline is an EOSC Resource. As such, it inherits all its f
 In addition, an InteroperabilityGuideline has the following properties:
 
 
-| Field | Description | Type | Multiplicity | Mandatory | Vocabulary |
-|---|---|---|---|---|---|
-| resourceTypesInfo | Interoperability Guideline type. | object | 1 | M |  |
-| resourceTypesInfo.resourceTypeGeneral | Type of the resource. Default value, not editable: "Guideline" | string('Guideline') | 1 | M |  |
-| resourceTypesInfo.resourceType | Specific type of the guideline. | string | 1 | M |  |
-| license | License of the source code of the adapter | Object | 1 | M | [SPDX_LICENSE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SPDX_LICENSE.json) |
-| license.licenseName | Name of the license | String | 1 | M |  |
-| license.licenseURL | URL of the license | URL | 1 | M |  |
-| relatedStandards | Standards related to the guideline This should point out to related standards only when it is a prerequisitite/dependency, and likely to influence a Provider’s design towards interoperability based on the guideline. | list of objects | 1 | O |  |
-| relatedStandards.relatedStandardURI | The URI of the related standard. | URL | 1 | M |  |
-| relatedStandards.relatedStandardIdentifier | The name of the related standard. | string | 1 | M |  |
-| creator |  | PersonType | N | M |  |
-| creator.firstName | First Name of the person | string | 1 | M |  |
-| creator.lastName | Last Name of the person | string | 1 | M |  |
-| creator.email | Email of the person | string | 1 | O |  |
-| creator.pids | persistent ids of the person | List of objects | 1 | O |  |
-| creator.pids.pid | pid | string | 1 | M |  |
-| creator.pids.pidScheme | PID scheme | string | 1 | M |  |
-| creator.affiliations | The organizational or institutional affiliation of the person. | List of objects | 1 | O |  |
-| creator.affiliations.affiliationName | Name of the organisation | string | 1 | M |  |
-| creator.affiliations.affiliationIdentifiers | Uniquely identifies the organizational affiliation of the person. | List of objects | 1 | O |  |
-| creator.affiliations.affiliationIdentifiers.id | PID of the organisation | string | 1 | M |  |
-| creator.affiliations.affiliationIdentifiers.type | Type of the PID of the organisation | string | 1 | M |  |
-| creator.role | Role of the person in the context of this entity | String Vocabulary Credit Taxonomy | 1 | O | [CREDIT](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CREDIT.json) |
+| Field                                                                                                                                              | Description                                                                                                                                                                                                             | Type | Multiplicity | Mandatory | Vocabulary |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|
+| resourceTypesInfo                                                                                                                                  | Interoperability Guideline type.                                                                                                                                                                                        | object | 1 | M |  |
+| resourceTypesInfo.resourceTypeGeneral                                                                                                              | Type of the resource. Default value, not editable: "Guideline"                                                                                                                                                          | string('Guideline') | 1 | M |  |
+| resourceTypesInfo.resourceType                                                                                                                     | Specific type of the guideline.                                                                                                                                                                                         | string | 1 | M |  |
+| license                                                                                                                                            | License of the source code of the adapter                                                                                                                                                                               | Object | 1 | M | [SPDX_LICENSE](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/SPDX_LICENSE.json) |
+| license.licenseName                                                                                                                                | Name of the license                                                                                                                                                                                                     | String | 1 | M |  |
+| license.licenseURL                                                                                                                                 | URL of the license                                                                                                                                                                                                      | URL | 1 | M |  |
+| relatedStandards                                                                                                                                   | Standards related to the guideline This should point out to related standards only when it is a prerequisitite/dependency, and likely to influence a Provider’s design towards interoperability based on the guideline. | list of objects | 1 | O |  |
+| relatedStandards.relatedStandardURI                                                                                                                | The URI of the related standard.                                                                                                                                                                                        | URL | 1 | M |  |
+| relatedStandards.relatedStandardIdentifier                                                                                                         | The name of the related standard.                                                                                                                                                                                       | string | 1 | M |  |
+| creator                                                                                                                                            |                                                                                                                                                                                                                         | PersonType | N | M |  |
+| creator.firstName                                                                                                                                  | First Name of the person                                                                                                                                                                                                | string | 1 | M |  |
+| creator.lastName                                                                                                                                   | Last Name of the person                                                                                                                                                                                                 | string | 1 | M |  |
+| creator.email                                                                                                                                      | Email of the person                                                                                                                                                                                                     | string | 1 | O |  |
+| creator.pids                                                                                                                                       | persistent ids of the person                                                                                                                                                                                            | List of objects | 1 | O |  |
+| creator.pids.pid                                                                                                                                   | pid                                                                                                                                                                                                                     | string | 1 | M |  |
+| creator.pids.pidScheme                                                                                                                             | PID scheme                                                                                                                                                                                                              | string | 1 | M |  |
+| creator.affiliations                                                                                                                               | The organizational or institutional affiliation of the person.                                                                                                                                                          | List of objects | 1 | O |  |
+| creator.affiliations.affiliationName                                                                                                               | Name of the organisation                                                                                                                                                                                                | string | 1 | M |  |
+| creator.affiliations.affiliationIdentifiers                                                                                                        | Uniquely identifies the organizational affiliation of the person.                                                                                                                                                       | List of objects | 1 | O |  |
+| creator.affiliations.affiliationIdentifiers.id                                                                                                     | PID of the organisation                                                                                                                                                                                                 | string | 1 | M |  |
+| creator.affiliations.affiliationIdentifiers.type                                                                                                   | Type of the PID of the organisation                                                                                                                                                                                     | string | 1 | M |  |
+| creator.role                                                                                                                                       | Role of the person in the context of this entity                                                                                                                                                                        | String Vocabulary Credit Taxonomy | 1 | O | [CREDIT](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CREDIT.json) |
+| configurationTemplate | 	The configuration template defines the properties that a compliant resource should have to enable machine-interoperability	                                                                                            | PID                                                                                                                                                                                                                     | 	N	                                                                                                                                                                                                                     | O                                                                                                                                                                                                                       | |
 
 ## DeployableApplication
 
@@ -270,3 +274,20 @@ In addition, a TrainingResource has the following properties:
 | multimedia.multimediaName | Name of the multimedia resource. | String | 1 | M |  |
 | publicContact | Email to contact the organisation | email | N | M |  |
 | nodePID | Node the organisation is contributing to | PID | 1 | M |  |
+
+## Configuration Template
+
+| Field | Description | Type | Multiplicity | Mandatory | Vocabulary |
+|------|-------------|------|--------------|-----------|------------|
+| id | Persistent identifier of the configuration template | PID | 1 | M | — |
+| interoperabilityGuidelineId | Persistent identifier of the interoperability guideline | PID | 1 | M | — |
+| name | Name of the configuration template | string | 1 | M | — |
+| nodePID | PID of the Node where the template was defined | PID | 1 | M | — |
+| formModel | Map defining the structure of the configuration template (fields to be filled in by users) | List of objects (`formField`) | N | M | — |
+| formModel.formField | Definition of a single form field in the configuration template | object | N | M | — |
+| formModel.formField.fieldName | Name of the form field | string | 1 | M | — |
+| formModel.formField.fieldType | Type of the form field | string | 1 | M | — |
+| formModel.formField.fieldDescription | Description of the form field | string | 1 | O | — |
+| formModel.formField.mandatory | Indicates whether the field is mandatory | boolean | 1 | M | — |
+| formModel.formField.repeatable | Indicates whether the field is repeatable | boolean | 1 | M | — |
+

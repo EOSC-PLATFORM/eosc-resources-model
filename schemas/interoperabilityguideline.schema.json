@@ -54,6 +54,15 @@
           "description": "The main persons involved in producing the interoperability guidelines",
           "items": {"$ref": "urn:jsonschema:eosc:persontype"},
           "minItems": 1
+        },
+        "configurationTemplate": {
+          "type": "array",
+          "description": "Optional. Configuration templates defining the properties that a compliant resource should have to enable machine interoperability.",
+          "items": {
+            "type": "string",
+            "description": "Persistent Identifier (PID) of the configuration template enabling machine interoperability."
+          },
+          "minItems": 1
         }
       },
       "required": [
