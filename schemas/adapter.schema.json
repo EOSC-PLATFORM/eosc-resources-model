@@ -68,19 +68,33 @@
           "format": "date",
           "description": "Latest update date"
         },
-        "notes": {
-          "type": "object",
-          "description": "Notes: for optional attributes.",
-          "properties": {
-            "sqa": {
-              "type": "string",
-              "format": "uri",
-              "description": "URL to the software quality scores/badges"
-            }
-          },
-          "required": [],
-          "additionalProperties": false
+      "notes": {
+        "type": "object",
+        "description": "Notes: for optional attributes.",
+        "properties": {
+          "sqa": {
+            "type": "object",
+            "description": "Software quality information.",
+            "required": [
+              "url"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL to the software quality scores."
+              },
+              "badge": {
+                "type": "string",
+                "description": "Software quality badge.",
+                "$comment": "Vocabulary: Badge; optional if no badge is available for software that fails QA"
+              }
+            },
+            "additionalProperties": false
+          }
         },
+        "additionalProperties": false
+      },
         "creators": {
           "type": "array",
           "description": "The main persons involved in producing the adapter",

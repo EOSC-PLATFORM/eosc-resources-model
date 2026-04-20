@@ -143,8 +143,10 @@ In addition, a Adapter has the following properties:
 | creator.affiliations.affiliationIdentifiers.id | PID of the organisation | string | 1 | M |  |
 | creator.affiliations.affiliationIdentifiers.type | Type of the PID of the organisation | string | 1 | M |  |
 | creator.role | Role of the person in the context of this entity | String Vocabulary Credit Taxonomy | 1 | O | [CREDIT](https://github.com/madgeek-arc/resource-catalogue-docs/blob/master/vocabularies/CREDIT.json) |
-| notes | Notes: for optional attributes. | Object | 1 | O |  |
-| notes.sqa | URL to the software quality scores/badges | URL | 1 | O |  |
+| notes | Notes: for optional attributes | Object | 1 | O |  |
+| notes.sqa | Software quality information | Object | 1 | O |  |
+| notes.sqa.url | URL to the software quality scores | URL | 1 | M |  |
+| notes.sqa.badge | Badge | String | 1 | M / O* | Badge | |
 
 ## InteroperabilityGuideline
 
