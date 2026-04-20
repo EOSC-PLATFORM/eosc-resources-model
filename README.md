@@ -27,6 +27,18 @@ In the following, each table includes details about the fields of each entity:
 
 You can find a more structured definition in json in the folder [schemas](schemas/).
 
+<!-- TOC -->
+* [EOSC Profiles](#eosc-profiles)
+  * [EOSC Resource](#eosc-resource)
+  * [Service](#service)
+  * [Data Source](#data-source)
+  * [Adapter](#adapter)
+  * [InteroperabilityGuideline](#interoperabilityguideline)
+  * [DeployableApplication](#deployableapplication)
+  * [TrainingResource](#trainingresource)
+  * [Organization](#organization)
+<!-- TOC -->
+
 ## EOSC Resource
 
 EOSC Resource is the super-class that defines properties shared among the different sub-classes.
