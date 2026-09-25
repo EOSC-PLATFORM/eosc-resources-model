@@ -49,7 +49,7 @@ EOSC Resource is the super-class that defines properties shared among the differ
 | alternativePIDs | Other persistent identifiers | List of Objects | 1 | O |  |
 | alternativePIDs.pid | PID value | String | 1 | M |  |
 | alternativePIDs.pidSchema | PID schema | String | 1 | O |  | 
-| url | URLs resolving to the resource | URL | N | O |  |
+| url | URLs resolving to the resource | URL | N | M |  |
 | name | Name or title of the resource | String | 1 | M |  |
 | description | A high-level description in fairly non-technical terms of a) what the Resource does, functionality it provides and Resources it enables to access, b) the benefit to a user/customer delivered by a Resource; benefits are usually related to alleviating pains (e.g., eliminate undesired outcomes, obstacles or risks) or producing gains (e.g. increased performance, social gains, positive emotions or cost saving), c) list of customers, communities, users, etc. using the Resource. | String | 1 | M |  |
 | publishingDate | date in which the resource was made available for discovery and access to others | Date (ISO 8601) | 1 | M |  | 
